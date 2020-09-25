@@ -1,6 +1,6 @@
 module github.com/makerdao/vulcanizedb
 
-go 1.12
+go 1.15
 
 require (
 	github.com/ClickHouse/clickhouse-go v1.4.3 // indirect
