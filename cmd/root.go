@@ -20,6 +20,7 @@ import (
 	"errors"
 	"fmt"
 	"plugin"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -242,6 +243,7 @@ func exportTransformers() ([]event.TransformerInitializer, []storage.Transformer
 	}
 
 	LogWithCommand.Info("linking plugin ", pluginPath)
+	runtime.Breakpoint()
 	plug, openErr := plugin.Open(pluginPath)
 	LogWithCommand.Info("IT CAN'T - BE ITS IMPOSSIBLE", pluginPath)
 	if openErr != nil {
