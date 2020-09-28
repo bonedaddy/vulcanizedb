@@ -27,7 +27,6 @@ import (
 	"github.com/lib/pq"
 	"github.com/makerdao/vulcanizedb/pkg/config"
 	"github.com/makerdao/vulcanizedb/pkg/plugin/helpers"
-	"github.com/pressly/goose"
 )
 
 // Interface for managing the db migrations for plugin transformers
@@ -104,31 +103,31 @@ func (m *manager) RunMigrations() error {
 
 func (m *manager) runPublicMigrations() error {
 	// Setup DB if not set
-	if m.db == nil {
-		setErr := m.setDB()
-		if setErr != nil {
-			return fmt.Errorf("could not open db: %w", setErr)
+	/*	if m.db == nil {
+			setErr := m.setDB()
+			if setErr != nil {
+				return fmt.Errorf("could not open db: %w", setErr)
+			}
 		}
-	}
 
-	goose.SetTableName("public.goose_db_version")
+		goose.SetTableName("public.goose_db_version")
 
-	path, pathErr := helpers.CleanPath(filepath.Join("$GOPATH/src", m.GenConfig.Home, "db", "migrations"))
+		path, pathErr := helpers.CleanPath(filepath.Join("$GOPATH/src", m.GenConfig.Home, "db", "migrations"))
 
-	if pathErr != nil {
-		return fmt.Errorf("could not construct filepath %w", pathErr)
-	}
+		if pathErr != nil {
+			return fmt.Errorf("could not construct filepath %w", pathErr)
+		}
 
-	fixErr := goose.Fix(path)
-	if fixErr != nil {
-		return fmt.Errorf("version fixing for plugin migrations at %s failed: %w", path, fixErr)
-	}
+		fixErr := goose.Fix(path)
+		if fixErr != nil {
+			return fmt.Errorf("version fixing for plugin migrations at %s failed: %w", path, fixErr)
+		}
 
-	// Run the copied migrations with goose
-	upErr := goose.Up(m.db, path)
-	if upErr != nil {
-		return fmt.Errorf("db migrations for plugin transformers at %s failed: %w", path, upErr)
-	}
+		// Run the copied migrations with goose
+		upErr := goose.Up(m.db, path)
+		if upErr != nil {
+			return fmt.Errorf("db migrations for plugin transformers at %s failed: %w", path, upErr)
+		}*/
 	return nil
 
 }
@@ -186,31 +185,31 @@ func (m *manager) createMigrationCopies(paths []string) error {
 
 func (m *manager) fixAndRun(path string) error {
 	// Setup DB if not set
-	if m.db == nil {
-		setErr := m.setDB()
-		if setErr != nil {
-			return fmt.Errorf("could not open db: %w", setErr)
+	/*	if m.db == nil {
+			setErr := m.setDB()
+			if setErr != nil {
+				return fmt.Errorf("could not open db: %w", setErr)
+			}
 		}
-	}
 
-	_, execErr := m.db.Exec(fmt.Sprintf("CREATE SCHEMA IF NOT EXISTS %s", m.GenConfig.Schema))
-	if execErr != nil {
-		return fmt.Errorf("could not create schema %s, %w", m.GenConfig.Schema, execErr)
-	}
+		_, execErr := m.db.Exec(fmt.Sprintf("CREATE SCHEMA IF NOT EXISTS %s", m.GenConfig.Schema))
+		if execErr != nil {
+			return fmt.Errorf("could not create schema %s, %w", m.GenConfig.Schema, execErr)
+		}
 
-	goose.SetTableName(fmt.Sprintf("%s.goose_db_version", m.GenConfig.Schema))
+		goose.SetTableName(fmt.Sprintf("%s.goose_db_version", m.GenConfig.Schema))
 
-	// Fix the migrations
-	fixErr := goose.Fix(m.tmpMigDir)
-	if fixErr != nil {
-		return fmt.Errorf("version fixing for plugin migrations at %s failed: %w", path, fixErr)
-	}
+		// Fix the migrations
+		fixErr := goose.Fix(m.tmpMigDir)
+		if fixErr != nil {
+			return fmt.Errorf("version fixing for plugin migrations at %s failed: %w", path, fixErr)
+		}
 
-	// Run the copied migrations with goose
-	upErr := goose.Up(m.db, m.tmpMigDir)
-	if upErr != nil {
-		return fmt.Errorf("db migrations for plugin transformers at %s failed: %w", path, upErr)
-	}
+		// Run the copied migrations with goose
+		upErr := goose.Up(m.db, m.tmpMigDir)
+		if upErr != nil {
+			return fmt.Errorf("db migrations for plugin transformers at %s failed: %w", path, upErr)
+		}*/
 	return nil
 }
 

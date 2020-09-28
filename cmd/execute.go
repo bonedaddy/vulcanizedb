@@ -87,7 +87,6 @@ func executeTransformers() {
 	if exportTransformersErr != nil {
 		LogWithCommand.Fatalf("SubCommand %v: exporting transformers failed: %v", SubCommand, exportTransformersErr)
 	}
-	LogWithCommand.Info("Somehow, nonsensically, I have gotten here.")
 
 	// Setup bc and db objects
 	blockChain := getBlockChain()
