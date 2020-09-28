@@ -6,16 +6,19 @@ require (
 	github.com/ClickHouse/clickhouse-go v1.4.3 // indirect
 	github.com/dave/jennifer v1.3.0
 	github.com/ethereum/go-ethereum v1.9.21
+	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/hashicorp/golang-lru v0.5.4
 	github.com/hpcloud/tail v1.0.0
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/lib/pq v1.0.0
+	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/onsi/ginkgo v1.14.0
 	github.com/onsi/gomega v1.10.1
 	github.com/pressly/goose v2.7.0-rc5+incompatible
-	github.com/sirupsen/logrus v1.2.0
+	github.com/prometheus/tsdb v0.10.0 // indirect
+	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/cobra v0.0.3
 	github.com/spf13/viper v1.3.2
 	golang.org/x/net v0.0.0-20200822124328-c89045814202
