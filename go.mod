@@ -1,6 +1,6 @@
 module github.com/makerdao/vulcanizedb
 
-go 1.15
+go 1.12
 
 require (
 	github.com/allegro/bigcache v1.2.1 // indirect
@@ -13,12 +13,13 @@ require (
 	github.com/docker/docker v1.13.1 // indirect
 	github.com/edsrzf/mmap-go v1.0.0 // indirect
 	github.com/elastic/gosigar v0.10.5 // indirect
-	github.com/ethereum/go-ethereum v1.9.15
+	github.com/ethereum/go-ethereum v1.9.6
 	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5 // indirect
 	github.com/gballet/go-libpcsclite v0.0.0-20191108122812-4678299bea08 // indirect
 	github.com/gorilla/websocket v1.4.1 // indirect
-	github.com/hashicorp/golang-lru v0.5.4
+	github.com/hashicorp/golang-lru v0.5.3
 	github.com/hpcloud/tail v1.0.0
+	github.com/huin/goupnp v1.0.0
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/influxdata/influxdb v1.7.9 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
@@ -43,7 +44,7 @@ require (
 	github.com/spf13/viper v1.3.2
 	github.com/status-im/keycard-go v0.0.0-20191119114148-6dd40a46baa0 // indirect
 	github.com/tyler-smith/go-bip39 v1.0.2 // indirect
-	golang.org/x/net v0.0.0-20200425230154-ff2c4b7c35a0
+	golang.org/x/net v0.0.0-20200301022130-244492dfa37a
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58
 	google.golang.org/appengine v1.6.5 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7
